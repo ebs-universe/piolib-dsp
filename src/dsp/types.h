@@ -4,6 +4,7 @@
 #define DSP_TYPES_H
 
 #include <stdint.h>
+#include <math.h>
 
 // extracts from CMSIS DSP v1.10.0 arm_math.h 
 // (gh latest)

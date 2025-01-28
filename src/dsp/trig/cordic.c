@@ -95,7 +95,7 @@ void cordic_sine_wave_f64_reset(cordic_sine_wave_f64_t * wave, f32_t sample_freq
 
 FASTEXEC
 void cordic_sine_wave_f32_propagate(cordic_sine_wave_f32_t * wave){
-    q31_t s, c;
+    q31_t s=0, c=0;
     wave->phase += wave->phase_step;
     cordic_sincos(wave->phase, wave->m, &s, &c);
     wave->sin = q31_to_f32(s) * wave->gain;
@@ -104,7 +104,7 @@ void cordic_sine_wave_f32_propagate(cordic_sine_wave_f32_t * wave){
 
 FASTEXEC
 void cordic_sine_wave_f64_propagate(cordic_sine_wave_f64_t * wave){
-    q31_t s, c;
+    q31_t s=0, c=0;
     wave->phase += wave->phase_step;
     cordic_sincos(wave->phase, wave->m, &s, &c);
     wave->sin = q31_to_f64(s) * wave->gain;
